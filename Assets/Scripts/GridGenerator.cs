@@ -21,7 +21,7 @@ public class GridGenerator : MonoBehaviour
         // Calculate the starting position for the top-left cell to ensure the parent is at the center
         Vector3 startingPosition = new Vector3(-totalWidth / 2f + cellWidth / 2f, totalHeight / 2f - cellHeight / 2f, 0f);
 
-        for (int y = yCount - 1; y >= 0; y--) // Start from yCount - 1 to 0
+        for (int y = 0; y < yCount; y++) // Start from yCount - 1 to 0
         {
             for (int x = 0; x < xCount; x++)
             {
@@ -29,6 +29,7 @@ public class GridGenerator : MonoBehaviour
 
                 // Instantiate a cellPrefab at the calculated position
                 GameObject newCell = Instantiate(cellPrefab, cellPosition, Quaternion.identity);
+                newCell.name = x.ToString()+ "/" + y.ToString();
                 newCell.transform.parent = transform; // Set the parent of the cell to this GameObject
             }
         }

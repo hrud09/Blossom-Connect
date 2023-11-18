@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GridBox : MonoBehaviour
 {
+
+
+    public FlowerType thisGridType;
     private void OnMouseOver()
     {
         if (Input.GetMouseButton(0)) {
@@ -11,17 +14,19 @@ public class GridBox : MonoBehaviour
             if (FlowerDotsManager.instance.currentFlowerType == FlowerType.Green) { 
             
                 GetComponent<SpriteRenderer>().color = Color.green;
-
+                thisGridType = FlowerType.Green;
             }
         }
     }
 
     private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
 
-           
-        }
+        FlowerDotsManager.instance.currentFlowerType = thisGridType;
+    }
+    private void OnMouseUp()
+    {
+
+       
     }
 }

@@ -6,7 +6,7 @@ public class FlowerDot : MonoBehaviour
 {
     public FlowerType type;
     public FlowerDotsManager dotsManager;
-
+    public LineRenderer lineRenderer;
     private void Start()
     {
         dotsManager = FlowerDotsManager.instance;
@@ -15,7 +15,6 @@ public class FlowerDot : MonoBehaviour
 
     private void OnMouseDown()
     {
-       print(gameObject.name);
        dotsManager.currentFlowerType = type;
     }
 }

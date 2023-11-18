@@ -30,6 +30,9 @@ public class FlowerDotsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonUp(0))
+        {
+            currentFlowerType = FlowerType.None;
+        }
     }
 }
