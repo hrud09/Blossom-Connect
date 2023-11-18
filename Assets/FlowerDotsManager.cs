@@ -17,7 +17,7 @@ public class FlowerDotsManager : MonoBehaviour
 
     public static FlowerDotsManager instance;
     public FlowerType currentFlowerType;
-
+    public FlowerDot currentFlowerDotSeleted;
     private void Awake()
     {
         instance = this;

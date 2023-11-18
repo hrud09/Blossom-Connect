@@ -7,6 +7,8 @@ public class FlowerDot : MonoBehaviour
     public FlowerType type;
     public FlowerDotsManager dotsManager;
     public LineRenderer lineRenderer;
+
+    public List<GridBox> gridsUsed = new List<GridBox>();
     private void Start()
     {
         dotsManager = FlowerDotsManager.instance;
@@ -15,6 +17,7 @@ public class FlowerDot : MonoBehaviour
 
     private void OnMouseDown()
     {
-       dotsManager.currentFlowerType = type;
+        dotsManager.currentFlowerDotSeleted = this;
+        dotsManager.currentFlowerType = type;
     }
 }
